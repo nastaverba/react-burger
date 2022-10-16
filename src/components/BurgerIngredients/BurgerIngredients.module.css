@@ -5,7 +5,7 @@
 }
 
 .BurgerScroll {
-  height: 660px;
+  max-height: 660px;
   overflow: auto;
   display: flex;
   flex-direction: column;
