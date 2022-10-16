@@ -12,22 +12,18 @@
   align-items: flex-start;
 }
 
-/* width */
 .BurgerScroll::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 .BurgerScroll::-webkit-scrollbar-track {
   background: #2F2F37;
 }
 
-/* Handle */
 .BurgerScroll::-webkit-scrollbar-thumb {
   background: #8585AD;
 }
 
-/* Handle on hover */
 .BurgerScroll::-webkit-scrollbar-thumb:hover {
   background: rgba(133, 133, 173, .7);
 }

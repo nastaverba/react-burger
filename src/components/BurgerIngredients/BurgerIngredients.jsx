@@ -1,20 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { ConstructorElement } from '@ya.praktikum/react-developer-burger-ui-components';
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientStyles from './BurgerIngredients.module.css';
-import ConstructorStyles from '../ConstructorContainer/ConstructorContainer.module.css';
-import BurgerStyles from '../BurgerConstructor/BurgerConstructor.module.css';
-import TotalStyles from '../Total/Total.module.css';
-import BunImage from '../../images/bun.png';
 import BigBun from '../../images/bunBig.png';
-import SauceImage from '../../images/sauce.png';
-import MeatImage from '../../images/meat.png';
-import RingsImage from '../../images/rings.png';
-import FruitsImage from '../../images/fruits.png';
-import Mover from '../../images/mover.png';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import RowStyles from '../IngredientRow/IngredientRow.module.css';
 import {Counter} from '@ya.praktikum/react-developer-burger-ui-components';
