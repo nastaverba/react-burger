@@ -1,9 +1,7 @@
 .ElementContainer {
-  padding-left: 30px;
-}
-
-.ElementContainerDraggable {
   display: flex;
   align-items: center;
   gap: 14px;
+  padding-right: 8px;
 }
+

@@ -2,15 +2,15 @@
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 .BurgerScroll {
-  max-height: 440px;
+  max-height: 465px;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
 
 /* width */

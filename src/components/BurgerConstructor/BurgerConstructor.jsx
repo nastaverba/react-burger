@@ -20,7 +20,7 @@ function BurgerConstructor() {
   return (
     <>
       <section className={BurgerStyles.BurgerConstructor} >
-        <div className={ConstructorStyles.ElementContainer}>
+        <div className="pl-2">
           <ConstructorElement
             type="top"
             isLocked={true}
@@ -30,7 +30,7 @@ function BurgerConstructor() {
           />
         </div>
         <div className={BurgerStyles.BurgerScroll}>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
+        <div className={ConstructorStyles.ElementContainer}>
           <img src={Mover} />
           <ConstructorElement
             text="Соус традиционный галактический"
@@ -38,7 +38,7 @@ function BurgerConstructor() {
             thumbnail={SauceImage}
           />
         </div>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
+        <div className={ConstructorStyles.ElementContainer}>
           <img src={Mover} />
           <ConstructorElement
             text="Мясо бессмертных моллюсков Protostomia"
@@ -46,7 +46,7 @@ function BurgerConstructor() {
             thumbnail={MeatImage}
           />
         </div>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
+        <div className={ConstructorStyles.ElementContainer}>
           <img src={Mover} />
           <ConstructorElement
             text="Плоды Фалленианского дерева"
@@ -54,32 +54,32 @@ function BurgerConstructor() {
             thumbnail={FruitsImage}
           />
         </div>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
+        <div className={ConstructorStyles.ElementContainer}>
           <img src={Mover} />
           <ConstructorElement
             text="Хрустящие минеральные кольца"
             price={80}
             thumbnail={RingsImage}
           />
-        </div>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
-          <img src={Mover} />
-          <ConstructorElement
-            text="Хрустящие минеральные кольца"
-            price={80}
-            thumbnail={RingsImage}
-          />
-        </div>
-        <div className={ConstructorStyles.ElementContainerDraggable}>
-          <img src={Mover} />
-          <ConstructorElement
-            text="Хрустящие минеральные кольца"
-            price={80}
-            thumbnail={RingsImage}
-          />
-        </div>
         </div>
         <div className={ConstructorStyles.ElementContainer}>
+          <img src={Mover} />
+          <ConstructorElement
+            text="Хрустящие минеральные кольца"
+            price={80}
+            thumbnail={RingsImage}
+          />
+        </div>
+        <div className={ConstructorStyles.ElementContainer}>
+          <img src={Mover} />
+          <ConstructorElement
+            text="Хрустящие минеральные кольца"
+            price={80}
+            thumbnail={RingsImage}
+          />
+        </div>
+        </div>
+        <div className="pl-2">
           <ConstructorElement
             type="bottom"
             isLocked={true}
