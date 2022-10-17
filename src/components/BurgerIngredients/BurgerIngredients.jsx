@@ -1,13 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import IngredientStyles from './BurgerIngredients.module.css';
-import BigBun from '../../images/bunBig.png';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import RowStyles from '../IngredientRow/IngredientRow.module.css';
-import { Counter } from '@ya.praktikum/react-developer-burger-ui-components';
-
 import Card from '../Card/Card.jsx';
 import data from '../../utils/data.js';
 

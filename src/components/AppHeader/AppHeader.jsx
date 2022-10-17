@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
 import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import AppHeaderStyles from './AppHeader.module.css';
 import MenuItemStyles from '../MenuItem/MenuItem.module.css';
-import MenuContainerStyles from '../MenuContainer/MenuContainer.module.css'
+import MenuContainerStyles from '../MenuContainer/MenuContainer.module.css';
 
 
 function AppHeader() {

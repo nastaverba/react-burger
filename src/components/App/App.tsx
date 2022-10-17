@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../logo.svg';
+import ReactDOM from 'react-dom';
 import './App.css';
 import AppHeader from '../AppHeader/AppHeader';
 import Main from '../Main/Main';

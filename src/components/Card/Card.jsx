@@ -1,12 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import BigBun from '../../images/bunBig.png';
 import { Counter } from '@ya.praktikum/react-developer-burger-ui-components';
-import { isPropertySignature } from 'typescript';
-
-
 
 function Card(props) {
   return (
