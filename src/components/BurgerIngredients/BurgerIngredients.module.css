@@ -17,13 +17,13 @@
 }
 
 .BurgerScroll::-webkit-scrollbar-track {
-  background: #2F2F37;
+  background: #2f2f37;
 }
 
 .BurgerScroll::-webkit-scrollbar-thumb {
-  background: #8585AD;
+  background: #8585ad;
 }
 
 .BurgerScroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(133, 133, 173, .7);
+  background: rgba(133, 133, 173, 0.7);
 }

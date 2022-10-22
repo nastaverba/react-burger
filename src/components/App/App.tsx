@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
-import AppHeader from '../AppHeader/AppHeader';
-import Main from '../Main/Main';
+import React from "react";
+import "./App.css";
+import AppHeader from "../AppHeader/AppHeader";
+import Main from "../Main/Main";
 
 function App() {
   return (
