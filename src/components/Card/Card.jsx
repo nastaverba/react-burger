@@ -7,7 +7,7 @@ import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 function Card(props) {
   return (
     <div className="" style={{ position: "relative", width: "272px" }}>
-      <img src={props.image} />
+      <img src={props.image} alt={props.name}/>
       <Counter count={1} size="default" />
       <div
         className="pt-1 pb-1"

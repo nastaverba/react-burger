@@ -12,13 +12,13 @@ function AppHeader() {
     <>
       <header className={AppHeaderStyles.AppHeader}>
         <div className={MenuContainerStyles.MenuContainer}>
-          <a className={MenuItemStyles.MenuItem} href="">
+          <a className={MenuItemStyles.MenuItem} href="/#">
             <div className={MenuItemStyles.MenuItemIcon}>
               <BurgerIcon type="primary" />
             </div>
             <span className="text text_type_main-default">Конструктор</span>
           </a>
-          <a className={MenuItemStyles.MenuItemSecondary} href="">
+          <a className={MenuItemStyles.MenuItemSecondary} href="/#">
             <div className={MenuItemStyles.MenuItemIcon}>
               <ListIcon type="secondary" />
             </div>
@@ -26,7 +26,7 @@ function AppHeader() {
           </a>
         </div>
         <Logo />
-        <a className={MenuItemStyles.MenuItemSecondary} href="">
+        <a className={MenuItemStyles.MenuItemSecondary} href="/#">
           <div className={MenuItemStyles.MenuItemIcon}>
             <ProfileIcon type="secondary" />
           </div>

@@ -29,7 +29,7 @@ function BurgerConstructor() {
         </div>
         <div className={BurgerStyles.BurgerScroll}>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Соус традиционный галактический"
               price={30}
@@ -37,7 +37,7 @@ function BurgerConstructor() {
             />
           </div>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Мясо бессмертных моллюсков Protostomia"
               price={300}
@@ -45,7 +45,7 @@ function BurgerConstructor() {
             />
           </div>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Плоды Фалленианского дерева"
               price={80}
@@ -53,7 +53,7 @@ function BurgerConstructor() {
             />
           </div>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
               price={80}
@@ -61,7 +61,7 @@ function BurgerConstructor() {
             />
           </div>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
               price={80}
@@ -69,7 +69,7 @@ function BurgerConstructor() {
             />
           </div>
           <div className={ConstructorStyles.ElementContainer}>
-            <img src={Mover} />
+            <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
               price={80}
