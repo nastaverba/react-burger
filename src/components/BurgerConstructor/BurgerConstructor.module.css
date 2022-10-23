@@ -28,3 +28,24 @@
 .BurgerScroll::-webkit-scrollbar-thumb:hover {
   background: rgba(133, 133, 173, 0.7);
 }
+
+.ElementContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 8px;
+}
+
+.Total {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 40px 0;
+  gap: 40px;
+}
+
+.TotalSum {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

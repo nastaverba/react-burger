@@ -5,8 +5,6 @@ import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-comp
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import BurgerStyles from "./BurgerConstructor.module.css";
-import ConstructorStyles from "../ConstructorContainer/ConstructorContainer.module.css";
-import TotalStyles from "../Total/Total.module.css";
 import BunImage from "../../images/bun.png";
 import SauceImage from "../../images/sauce.png";
 import MeatImage from "../../images/meat.png";
@@ -28,7 +26,7 @@ function BurgerConstructor() {
           />
         </div>
         <div className={BurgerStyles.BurgerScroll}>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Соус традиционный галактический"
@@ -36,7 +34,7 @@ function BurgerConstructor() {
               thumbnail={SauceImage}
             />
           </div>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Мясо бессмертных моллюсков Protostomia"
@@ -44,7 +42,7 @@ function BurgerConstructor() {
               thumbnail={MeatImage}
             />
           </div>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Плоды Фалленианского дерева"
@@ -52,7 +50,7 @@ function BurgerConstructor() {
               thumbnail={FruitsImage}
             />
           </div>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
@@ -60,7 +58,7 @@ function BurgerConstructor() {
               thumbnail={RingsImage}
             />
           </div>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
@@ -68,7 +66,7 @@ function BurgerConstructor() {
               thumbnail={RingsImage}
             />
           </div>
-          <div className={ConstructorStyles.ElementContainer}>
+          <div className={BurgerStyles.ElementContainer}>
             <img src={Mover} alt="Переместить ингредиент"/>
             <ConstructorElement
               text="Хрустящие минеральные кольца"
@@ -86,8 +84,8 @@ function BurgerConstructor() {
             thumbnail={BunImage}
           />
         </div>
-        <div className={TotalStyles.Total}>
-          <div className={TotalStyles.TotalSum}>
+        <div className={BurgerStyles.Total}>
+          <div className={BurgerStyles.TotalSum}>
             <p className="text text_type_digits-medium">610</p>
             <CurrencyIcon type="primary" />
           </div>

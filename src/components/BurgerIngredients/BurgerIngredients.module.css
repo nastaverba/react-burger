@@ -27,3 +27,11 @@
 .BurgerScroll::-webkit-scrollbar-thumb:hover {
   background: rgba(133, 133, 173, 0.7);
 }
+
+.IngredientRow {
+  display: flex;
+  max-width: 590px;
+  gap: 24px;
+  padding: 6px 8px 0 16px;
+}
+
