@@ -30,8 +30,11 @@
 
 .IngredientRow {
   display: flex;
+  flex-wrap: wrap;
   max-width: 590px;
-  gap: 24px;
-  padding: 6px 8px 0 16px;
+  column-gap: 24px;
+  row-gap: 32px;
+  padding: 6px 6px 0 16px;
+  box-sizing: border-box;
 }
 

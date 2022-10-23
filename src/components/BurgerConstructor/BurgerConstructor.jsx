@@ -4,14 +4,16 @@ import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-comp
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import BurgerStyles from "./BurgerConstructor.module.css";
-import BunImage from "../../images/bun.png";
-import SauceImage from "../../images/sauce.png";
-import MeatImage from "../../images/meat.png";
-import RingsImage from "../../images/rings.png";
-import FruitsImage from "../../images/fruits.png";
 import Mover from "../../images/mover.png";
+import data from "../../utils/data.js";
 
 function BurgerConstructor() {
+  const ingredients = data.filter((ingredient) => ingredient.type !== "bun");
+  const bun = data.find(
+    (ingredient) => ingredient.type === "bun"
+  );
+  const bunTopName = `${bun.name} (верх)`;
+  const bunBottomName = `${bun.name} (низ)`
   return (
     <>
       <section className={BurgerStyles.BurgerConstructor}>
@@ -19,68 +21,30 @@ function BurgerConstructor() {
           <ConstructorElement
             type="top"
             isLocked={true}
-            text="Кратерная булка N-200i (верх)"
-            price={20}
-            thumbnail={BunImage}
+            text={bunTopName}
+            price={bun.price}
+            thumbnail={bun.image}
           />
         </div>
         <div className={BurgerStyles.BurgerScroll}>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Соус традиционный галактический"
-              price={30}
-              thumbnail={SauceImage}
-            />
-          </div>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Мясо бессмертных моллюсков Protostomia"
-              price={300}
-              thumbnail={MeatImage}
-            />
-          </div>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Плоды Фалленианского дерева"
-              price={80}
-              thumbnail={FruitsImage}
-            />
-          </div>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Хрустящие минеральные кольца"
-              price={80}
-              thumbnail={RingsImage}
-            />
-          </div>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Хрустящие минеральные кольца"
-              price={80}
-              thumbnail={RingsImage}
-            />
-          </div>
-          <div className={BurgerStyles.ElementContainer}>
-            <img src={Mover} alt="Переместить ингредиент"/>
-            <ConstructorElement
-              text="Хрустящие минеральные кольца"
-              price={80}
-              thumbnail={RingsImage}
-            />
-          </div>
-        </div>
+        {ingredients.map((ingredient) => (
+              <div className={BurgerStyles.ElementContainer}>
+              <img src={Mover} alt="Переместить ингредиент"/>
+              <ConstructorElement
+                text={ingredient.name}
+                price={ingredient.price}
+                thumbnail={ingredient.image}
+              />
+            </div>
+            ))}
+</div>
         <div className="pl-2">
           <ConstructorElement
             type="bottom"
             isLocked={true}
-            text="Кратерная булка N-200i (низ)"
-            price={20}
-            thumbnail={BunImage}
+            text={bunBottomName}
+            price={bun.price}
+            thumbnail={bun.image}
           />
         </div>
         <div className={BurgerStyles.Total}>
