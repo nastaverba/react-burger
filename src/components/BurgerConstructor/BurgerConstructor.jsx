@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
@@ -97,13 +96,5 @@ function BurgerConstructor() {
     </>
   );
 }
-
-ConstructorElement.propTypes = {
-  type: PropTypes.string,
-  isLocked: PropTypes.bool,
-  text: PropTypes.string,
-  price: PropTypes.number,
-  thumbnail: PropTypes.string,
-};
 
 export default BurgerConstructor;
