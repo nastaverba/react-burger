@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
+import CardStyles from "./Card.module.css";
 
 function Card(props) {
+  const PriceStyles = `pt-1 pb-1 ${CardStyles.Price}`;
   return (
-    <div className="" style={{ position: "relative", width: "272px" }}>
-      <img src={props.image} alt={props.name}/>
+    <div className={CardStyles.Card}>
+      <img src={props.image} alt={props.name} />
       <Counter count={1} size="default" />
-      <div
-        className="pt-1 pb-1"
-        style={{ display: "flex", justifyContent: "center", gap: "9px" }}
-      >
+      <div className={PriceStyles}>
         <span className="text text_type_digits-default">{props.price}</span>
         <CurrencyIcon type="primary" />
       </div>

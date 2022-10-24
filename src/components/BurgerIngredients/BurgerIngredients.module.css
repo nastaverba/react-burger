@@ -28,6 +28,10 @@
   background: rgba(133, 133, 173, 0.7);
 }
 
+.TabContainer {
+  display: flex;
+}
+
 .IngredientRow {
   display: flex;
   flex-wrap: wrap;

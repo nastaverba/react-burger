@@ -18,6 +18,7 @@ function BurgerIngredients() {
   const buns = data.filter((ingredient) => ingredient.type === "bun");
   const sauces = data.filter((ingredient) => ingredient.type === "sauce");
   const ingredients = data.filter((ingredient) => ingredient.type === "main");
+  const containerStyles = `pb-10 ${IngredientStyles.TabContainer}`;
 
   return (
     <>
@@ -25,7 +26,7 @@ function BurgerIngredients() {
         <h1 className="text text_type_main-large pb-5 pt-10">
           Соберите бургер
         </h1>
-        <div style={{ display: "flex" }} className="pb-10">
+        <div className={containerStyles}>
           <Tab
             value="one"
             ref={bunRef}
