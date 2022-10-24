@@ -9,11 +9,10 @@ import data from "../../utils/data.js";
 
 function BurgerConstructor() {
   const ingredients = data.filter((ingredient) => ingredient.type !== "bun");
-  const bun = data.find(
-    (ingredient) => ingredient.type === "bun"
-  );
+  const bun = data.find((ingredient) => ingredient.type === "bun");
   const bunTopName = `${bun.name} (верх)`;
-  const bunBottomName = `${bun.name} (низ)`
+  const bunBottomName = `${bun.name} (низ)`;
+
   return (
     <>
       <section className={BurgerStyles.BurgerConstructor}>
@@ -27,17 +26,18 @@ function BurgerConstructor() {
           />
         </div>
         <div className={BurgerStyles.BurgerScroll}>
-        {ingredients.map((ingredient) => (
-              <div className={BurgerStyles.ElementContainer}>
-              <img src={Mover} alt="Переместить ингредиент"/>
+          {ingredients.map((ingredient) => (
+            <div className={BurgerStyles.ElementContainer}>
+              <img src={Mover} alt="Переместить ингредиент" />
               <ConstructorElement
+                key={ingredient._id}
                 text={ingredient.name}
                 price={ingredient.price}
                 thumbnail={ingredient.image}
               />
             </div>
-            ))}
-</div>
+          ))}
+        </div>
         <div className="pl-2">
           <ConstructorElement
             type="bottom"
