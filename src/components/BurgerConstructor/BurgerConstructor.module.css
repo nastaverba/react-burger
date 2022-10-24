@@ -1,0 +1,51 @@
+.BurgerConstructor {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.BurgerScroll {
+  max-height: 465px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.BurgerScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.BurgerScroll::-webkit-scrollbar-track {
+  background: #2f2f37;
+}
+
+.BurgerScroll::-webkit-scrollbar-thumb {
+  background: #8585ad;
+}
+
+.BurgerScroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(133, 133, 173, 0.7);
+}
+
+.ElementContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 8px;
+}
+
+.Total {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 40px 0;
+  gap: 40px;
+}
+
+.TotalSum {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
