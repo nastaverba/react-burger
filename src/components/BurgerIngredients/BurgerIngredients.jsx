@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import IngredientStyles from "./BurgerIngredients.module.css";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "../Card/Card.jsx";
-import data from "../../utils/data.js";
+import { Api } from "../Api/Api.js";
 
 function BurgerIngredients() {
   const [current, setCurrent] = useState("one");
@@ -15,87 +15,105 @@ function BurgerIngredients() {
     const element = document.getElementById(tab);
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
-  const buns = data.filter((ingredient) => ingredient.type === "bun");
-  const sauces = data.filter((ingredient) => ingredient.type === "sauce");
-  const ingredients = data.filter((ingredient) => ingredient.type === "main");
+
   const containerStyles = `pb-10 ${IngredientStyles.TabContainer}`;
 
-  return (
-    <>
-      <section className={IngredientStyles.BurgerIngredients}>
-        <h1 className="text text_type_main-large pb-5 pt-10">
-          Соберите бургер
-        </h1>
-        <div className={containerStyles}>
-          <Tab
-            value="one"
-            ref={bunRef}
-            active={current === "one"}
-            onClick={(bunRef) => setTab(bunRef)}
-          >
-            Булки
-          </Tab>
-          <Tab
-            value="two"
-            ref={sauceRef}
-            active={current === "two"}
-            onClick={(sauceRef) => setTab(sauceRef)}
-          >
-            Соусы
-          </Tab>
-          <Tab
-            value="three"
-            ref={mainRef}
-            active={current === "three"}
-            onClick={(mainRef) => setTab(mainRef)}
-          >
-            Начинки
-          </Tab>
-        </div>
-        <div className={IngredientStyles.BurgerScroll}>
-          <h2 className="text text_type_main-medium pb-6" id="one">
-            Булки
-          </h2>
-          <div className={IngredientStyles.IngredientRow}>
-            {buns.map((bun) => (
-              <Card
-                key={bun._id}
-                image={bun.image}
-                price={bun.price}
-                name={bun.name}
-              />
-            ))}
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    Api(setIsLoaded, setItems, setError);
+  }, []);
+
+  if (error) {
+    return <div>Ошибка: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Загрузка...</div>;
+  } else {
+    const buns = items.data.filter((ingredient) => ingredient.type === "bun");
+    const sauces = items.data.filter(
+      (ingredient) => ingredient.type === "sauce"
+    );
+    const ingredients = items.data.filter(
+      (ingredient) => ingredient.type === "main"
+    );
+    return (
+      <>
+        <section className={IngredientStyles.BurgerIngredients}>
+          <h1 className="text text_type_main-large pb-5 pt-10">
+            Соберите бургер
+          </h1>
+          <div className={containerStyles}>
+            <Tab
+              value="one"
+              ref={bunRef}
+              active={current === "one"}
+              onClick={(bunRef) => setTab(bunRef)}
+            >
+              Булки
+            </Tab>
+            <Tab
+              value="two"
+              ref={sauceRef}
+              active={current === "two"}
+              onClick={(sauceRef) => setTab(sauceRef)}
+            >
+              Соусы
+            </Tab>
+            <Tab
+              value="three"
+              ref={mainRef}
+              active={current === "three"}
+              onClick={(mainRef) => setTab(mainRef)}
+            >
+              Начинки
+            </Tab>
           </div>
-          <h2 className="text text_type_main-medium pt-10 pb-6" id="two">
-            Соусы
-          </h2>
-          <div className={IngredientStyles.IngredientRow}>
-            {sauces.map((sauce) => (
-              <Card
-                key={sauce._id}
-                image={sauce.image}
-                price={sauce.price}
-                name={sauce.name}
-              />
-            ))}
+          <div className={IngredientStyles.BurgerScroll}>
+            <h2 className="text text_type_main-medium pb-6" id="one">
+              Булки
+            </h2>
+            <div className={IngredientStyles.IngredientRow}>
+              {buns.map((bun) => (
+                <Card
+                  key={bun._id}
+                  image={bun.image}
+                  price={bun.price}
+                  name={bun.name}
+                />
+              ))}
+            </div>
+            <h2 className="text text_type_main-medium pt-10 pb-6" id="two">
+              Соусы
+            </h2>
+            <div className={IngredientStyles.IngredientRow}>
+              {sauces.map((sauce) => (
+                <Card
+                  key={sauce._id}
+                  image={sauce.image}
+                  price={sauce.price}
+                  name={sauce.name}
+                />
+              ))}
+            </div>
+            <h2 className="text text_type_main-medium pt-10 pb-6" id="three">
+              Начинки
+            </h2>
+            <div className={IngredientStyles.IngredientRow}>
+              {ingredients.map((ingredient) => (
+                <Card
+                  key={ingredient._id}
+                  image={ingredient.image}
+                  price={ingredient.price}
+                  name={ingredient.name}
+                />
+              ))}
+            </div>
           </div>
-          <h2 className="text text_type_main-medium pt-10 pb-6" id="three">
-            Начинки
-          </h2>
-          <div className={IngredientStyles.IngredientRow}>
-            {ingredients.map((ingredient) => (
-              <Card
-                key={ingredient._id}
-                image={ingredient.image}
-                price={ingredient.price}
-                name={ingredient.name}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+        </section>
+      </>
+    );
+  }
 }
 
 export default BurgerIngredients;
