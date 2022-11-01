@@ -27,58 +27,53 @@ function BurgerConstructor(props) {
     const bun = items.data.find((ingredient) => ingredient.type === "bun");
 
     return (
-      <>
-        <section className={BurgerStyles.BurgerConstructor}>
-          <div className="pl-2">
-            <ConstructorElement
-              type="top"
-              isLocked={true}
-              text={`${bun.name} (верх)`}
-              price={bun.price}
-              thumbnail={bun.image}
-            />
-          </div>
-          <div className={BurgerStyles.BurgerScroll}>
-            {ingredients.map((ingredient) => (
-              <div
-                className={BurgerStyles.ElementContainer}
-                key={ingredient._id}
-              >
-                <img src={Mover} alt="Переместить ингредиент" />
-                <ConstructorElement
-                  text={ingredient.name}
-                  price={ingredient.price}
-                  thumbnail={ingredient.image}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="pl-2">
-            <ConstructorElement
-              type="bottom"
-              isLocked={true}
-              text={`${bun.name} (низ)`}
-              price={bun.price}
-              thumbnail={bun.image}
-            />
-          </div>
-          <div className={BurgerStyles.Total}>
-            <div className={BurgerStyles.TotalSum}>
-              <p className="text text_type_digits-medium">610</p>
-              <CurrencyIcon type="primary" />
+      <section className={BurgerStyles.BurgerConstructor}>
+        <div className="pl-2">
+          <ConstructorElement
+            type="top"
+            isLocked={true}
+            text={`${bun.name} (верх)`}
+            price={bun.price}
+            thumbnail={bun.image}
+          />
+        </div>
+        <div className={BurgerStyles.BurgerScroll}>
+          {ingredients.map((ingredient) => (
+            <div className={BurgerStyles.ElementContainer} key={ingredient._id}>
+              <img src={Mover} alt="Переместить ингредиент" />
+              <ConstructorElement
+                text={ingredient.name}
+                price={ingredient.price}
+                thumbnail={ingredient.image}
+              />
             </div>
-            <Button
-              type="primary"
-              size="large"
-              onClick={() => {
-                props.updateData("", "order");
-              }}
-            >
-              Оформить заказ
-            </Button>
+          ))}
+        </div>
+        <div className="pl-2">
+          <ConstructorElement
+            type="bottom"
+            isLocked={true}
+            text={`${bun.name} (низ)`}
+            price={bun.price}
+            thumbnail={bun.image}
+          />
+        </div>
+        <div className={BurgerStyles.Total}>
+          <div className={BurgerStyles.TotalSum}>
+            <p className="text text_type_digits-medium">610</p>
+            <CurrencyIcon type="primary" />
           </div>
-        </section>
-      </>
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => {
+              props.updateData("", "order");
+            }}
+          >
+            Оформить заказ
+          </Button>
+        </div>
+      </section>
     );
   }
 }
