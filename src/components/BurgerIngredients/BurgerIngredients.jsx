@@ -8,9 +8,9 @@ import { Api } from "../Api/Api.js";
 
 function BurgerIngredients(props) {
   const [current, setCurrent] = useState("one");
-  const bunRef = useRef("one");
-  const sauceRef = useRef("two");
-  const mainRef = useRef("three");
+  // const bunRef = useRef("one");
+  // const sauceRef = useRef("two");
+  // const mainRef = useRef("three");
   const setTab = (tab) => {
     setCurrent(tab);
     const element = document.getElementById(tab);
@@ -47,25 +47,25 @@ function BurgerIngredients(props) {
           <div className={containerStyles}>
             <Tab
               value="one"
-              ref={bunRef}
+              // ref={bunRef}
               active={current === "one"}
-              onClick={(bunRef) => setTab(bunRef)}
+              onClick={() => setTab("one")}
             >
               Булки
             </Tab>
             <Tab
               value="two"
-              ref={sauceRef}
+              // ref={sauceRef}
               active={current === "two"}
-              onClick={(sauceRef) => setTab(sauceRef)}
+              onClick={() => setTab("two")}
             >
               Соусы
             </Tab>
             <Tab
               value="three"
-              ref={mainRef}
+              // ref={mainRef}
               active={current === "three"}
-              onClick={(mainRef) => setTab(mainRef)}
+              onClick={() => setTab("three")}
             >
               Начинки
             </Tab>

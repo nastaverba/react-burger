@@ -42,10 +42,12 @@ function BurgerConstructor(props) {
           </div>
           <div className={BurgerStyles.BurgerScroll}>
             {ingredients.map((ingredient) => (
-              <div className={BurgerStyles.ElementContainer}>
+              <div
+                className={BurgerStyles.ElementContainer}
+                key={ingredient._id}
+              >
                 <img src={Mover} alt="Переместить ингредиент" />
                 <ConstructorElement
-                  key={ingredient._id}
                   text={ingredient.name}
                   price={ingredient.price}
                   thumbnail={ingredient.image}
@@ -84,7 +86,7 @@ function BurgerConstructor(props) {
 }
 
 BurgerConstructor.propTypes = {
-  updateData: PropTypes.func.isRequired
-}
+  updateData: PropTypes.func.isRequired,
+};
 
 export default BurgerConstructor;
