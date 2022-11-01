@@ -5,7 +5,7 @@ import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "../Card/Card.jsx";
 import { Api } from "../Api/Api.js";
 
-function BurgerIngredients() {
+function BurgerIngredients(props) {
   const [current, setCurrent] = useState("one");
   const bunRef = useRef("one");
   const sauceRef = useRef("two");
@@ -80,6 +80,9 @@ function BurgerIngredients() {
                   image={bun.image}
                   price={bun.price}
                   name={bun.name}
+                  onClick={() => {
+                    props.updateData(bun, "ingredient");
+                  }}
                 />
               ))}
             </div>
@@ -93,6 +96,9 @@ function BurgerIngredients() {
                   image={sauce.image}
                   price={sauce.price}
                   name={sauce.name}
+                  onClick={() => {
+                    props.updateData(sauce, "ingredient");
+                  }}
                 />
               ))}
             </div>
@@ -106,6 +112,9 @@ function BurgerIngredients() {
                   image={ingredient.image}
                   price={ingredient.price}
                   name={ingredient.name}
+                  onClick={() => {
+                    props.updateData(ingredient, "ingredient");
+                  }}
                 />
               ))}
             </div>

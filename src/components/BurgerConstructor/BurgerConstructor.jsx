@@ -7,7 +7,7 @@ import BurgerStyles from "./BurgerConstructor.module.css";
 import Mover from "../../images/mover.png";
 import { Api } from "../Api/Api.js";
 
-function BurgerConstructor() {
+function BurgerConstructor(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -66,7 +66,13 @@ function BurgerConstructor() {
               <p className="text text_type_digits-medium">610</p>
               <CurrencyIcon type="primary" />
             </div>
-            <Button type="primary" size="large">
+            <Button
+              type="primary"
+              size="large"
+              onClick={() => {
+                props.updateData("", "order");
+              }}
+            >
               Оформить заказ
             </Button>
           </div>

@@ -7,8 +7,9 @@ import CardStyles from "./Card.module.css";
 
 function Card(props) {
   const PriceStyles = `pt-1 pb-1 ${CardStyles.Price}`;
+
   return (
-    <div className={CardStyles.Card}>
+    <div className={CardStyles.Card} onClick={props.onClick}>
       <img src={props.image} alt={props.name} />
       <Counter count={1} size="default" />
       <div className={PriceStyles}>
