@@ -1,0 +1,10 @@
+.Card {
+  position: relative;
+  width: 272px;
+}
+
+.Price {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}

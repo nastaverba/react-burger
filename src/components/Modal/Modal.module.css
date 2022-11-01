@@ -1,0 +1,24 @@
+.Modal {
+  max-width: 720px;
+  background: #1c1c21;
+  border-radius: 40px;
+  border: 1px solid rgba(76, 76, 255, 0.2);
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+
+.Close {
+  background: url("../../images/Close.png");
+  border: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 63px;
+  right: 43px;
+  cursor: pointer;
+}
