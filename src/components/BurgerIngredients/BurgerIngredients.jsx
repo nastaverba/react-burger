@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import IngredientStyles from "./BurgerIngredients.module.css";
@@ -8,16 +8,11 @@ import { Api } from "../Api/Api.js";
 
 function BurgerIngredients(props) {
   const [current, setCurrent] = useState("one");
-  // const bunRef = useRef("one");
-  // const sauceRef = useRef("two");
-  // const mainRef = useRef("three");
   const setTab = (tab) => {
     setCurrent(tab);
     const element = document.getElementById(tab);
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
-
-  const containerStyles = `pb-10 ${IngredientStyles.TabContainer}`;
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -44,10 +39,9 @@ function BurgerIngredients(props) {
           <h1 className="text text_type_main-large pb-5 pt-10">
             Соберите бургер
           </h1>
-          <div className={containerStyles}>
+          <div className={`pb-10 ${IngredientStyles.TabContainer}`}>
             <Tab
               value="one"
-              // ref={bunRef}
               active={current === "one"}
               onClick={() => setTab("one")}
             >
@@ -55,7 +49,6 @@ function BurgerIngredients(props) {
             </Tab>
             <Tab
               value="two"
-              // ref={sauceRef}
               active={current === "two"}
               onClick={() => setTab("two")}
             >
@@ -63,7 +56,6 @@ function BurgerIngredients(props) {
             </Tab>
             <Tab
               value="three"
-              // ref={mainRef}
               active={current === "three"}
               onClick={() => setTab("three")}
             >
@@ -127,7 +119,7 @@ function BurgerIngredients(props) {
 }
 
 BurgerIngredients.propTypes = {
-  updateData: PropTypes.func.isRequired
-}
+  updateData: PropTypes.func.isRequired,
+};
 
 export default BurgerIngredients;

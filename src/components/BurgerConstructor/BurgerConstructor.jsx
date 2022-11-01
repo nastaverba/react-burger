@@ -25,8 +25,6 @@ function BurgerConstructor(props) {
       (ingredient) => ingredient.type !== "bun"
     );
     const bun = items.data.find((ingredient) => ingredient.type === "bun");
-    const bunTopName = `${bun.name} (верх)`;
-    const bunBottomName = `${bun.name} (низ)`;
 
     return (
       <>
@@ -35,7 +33,7 @@ function BurgerConstructor(props) {
             <ConstructorElement
               type="top"
               isLocked={true}
-              text={bunTopName}
+              text={`${bun.name} (верх)`}
               price={bun.price}
               thumbnail={bun.image}
             />
@@ -59,7 +57,7 @@ function BurgerConstructor(props) {
             <ConstructorElement
               type="bottom"
               isLocked={true}
-              text={bunBottomName}
+              text={`${bun.name} (низ)`}
               price={bun.price}
               thumbnail={bun.image}
             />
