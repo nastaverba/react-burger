@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import IngredientStyles from "./BurgerIngredients.module.css";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
@@ -123,6 +124,10 @@ function BurgerIngredients(props) {
       </>
     );
   }
+}
+
+BurgerIngredients.propTypes = {
+  updateData: PropTypes.func.isRequired
 }
 
 export default BurgerIngredients;

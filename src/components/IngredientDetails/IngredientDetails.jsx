@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import IngredientModalStyles from "./IngredientDetails.module.css";
 
 function IngredientDetails(props) {
@@ -56,5 +58,11 @@ function IngredientDetails(props) {
     </div>
   );
 }
+
+IngredientDetails.propTypes = {
+  state: PropTypes.string.isRequired,
+  ingredientObject: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
 export default IngredientDetails;

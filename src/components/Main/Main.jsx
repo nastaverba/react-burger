@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import BurgerConstructor from "../BurgerConstructor/BurgerConstructor";
 import BurgerIngredients from "../BurgerIngredients/BurgerIngredients";
@@ -14,5 +15,9 @@ function Main(props) {
     </>
   );
 }
+
+Main.propTypes = {
+  updateData: PropTypes.func.isRequired
+};
 
 export default Main;

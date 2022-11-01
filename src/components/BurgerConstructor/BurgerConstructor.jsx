@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
@@ -80,6 +81,10 @@ function BurgerConstructor(props) {
       </>
     );
   }
+}
+
+BurgerConstructor.propTypes = {
+  updateData: PropTypes.func.isRequired
 }
 
 export default BurgerConstructor;

@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import ModalStyles from "./Modal.module.css";
 
 function Modal(props) {
@@ -9,5 +11,10 @@ function Modal(props) {
     </div>
   );
 }
+
+Modal.propTypes = {
+  deleteData: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired
+};
 
 export default Modal;

@@ -1,5 +1,6 @@
 import React from "react";
 import PortalReactDOM from "react-dom";
+import PropTypes from "prop-types";
 
 import OverlayStyles from "./ModalOverlay.module.css";
 
@@ -34,5 +35,11 @@ function ModalOverlay(props) {
     modalRoot
   );
 }
+
+  ModalOverlay.propTypes = {
+    visible: PropTypes.bool.isRequired,
+    deleteData: PropTypes.func.isRequired,
+    children: PropTypes.node.isRequired
+  }
 
 export default ModalOverlay;
