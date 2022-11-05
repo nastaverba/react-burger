@@ -14,7 +14,7 @@ function App() {
     modalData: "",
   });
 
-  const updateData = (value: any, modalValue: any) => {
+  const updateData = (value, modalValue) => {
     setState({
       ...state,
       visible: true,
@@ -23,7 +23,7 @@ function App() {
     });
   };
 
-  const deleteData = (value: any) => {
+  const deleteData = (value) => {
     setState({
       ...state,
       visible: false,
@@ -32,29 +32,25 @@ function App() {
     });
   };
 
-  const order = <OrderDetails state={state.modalData} onClick={deleteData} />;
-
-  const details = (
-    <IngredientDetails
-      state={state.modalData}
-      ingredientObject={state.ingredientObject}
-      onClick={deleteData}
-    />
-  );
-
-  const modal = (
-    <ModalOverlay visible={state.visible} deleteData={deleteData}>
-      <Modal deleteData={deleteData}>
-        {state.modalData === "ingredient" ? details : order}
-      </Modal>
-    </ModalOverlay>
-  );
-
   return (
     <div className="App">
       <AppHeader />
       <Main updateData={updateData} />
-      {state.visible && modal}
+      {state.visible && (
+        <ModalOverlay visible={state.visible} deleteData={deleteData}>
+          <Modal deleteData={deleteData}>
+            {state.modalData === "ingredient" ? (
+              <IngredientDetails
+                state={state.modalData}
+                ingredientObject={state.ingredientObject}
+                onClick={deleteData}
+              />
+            ) : (
+              <OrderDetails state={state.modalData} onClick={deleteData} />
+            )}
+          </Modal>
+        </ModalOverlay>
+      )}
     </div>
   );
 }
